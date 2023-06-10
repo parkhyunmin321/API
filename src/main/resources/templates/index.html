@@ -1,99 +1,76 @@
+
+
 <!--<!DOCTYPE html>-->
 <!--<html lang="en">-->
-
 <!--<head>-->
 <!--    <meta charset="UTF-8">-->
-<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <link rel="stylesheet" href="css/index.css">-->
-<!--    <title>Document</title>-->
-<!--    <style>-->
-<!--    .error {-->
-<!--      color: red;-->
-<!--    }-->
-<!--  </style>-->
+<!--    <title>index</title>-->
 <!--</head>-->
-
 <!--<body>-->
-<!--<div id="form-container">-->
-<!--    <div id="form-inner-container">-->
-<!--        &lt;!&ndash; Sign up form &ndash;&gt;-->
-
-<!--        <div id="sign-in-container">-->
-<!--            <h3>Get Started</h3>-->
-
-<!--            &lt;!&ndash; <form id="login-form" onsubmit="return submitForm()"> &ndash;&gt;-->
-<!--            <form action = './process.php' method = 'get'>-->
-<!--                <label for="steam_id">Steam ID</label>-->
-<!--                <input type="text" name="steam_id" id="steam_id" placeholder="Enter 17-digit Steam ID" minlength="17" maxlength="17">-->
-
-<!--                <label for="steam_API_key">Steam API Key</label>-->
-<!--                <input type="text" name="steam_api_key" id="steam_api_key" placeholder="Enter 32-digit string Steam API Key" minlength="32" maxlength="32">-->
-
-<!--                <div id="form-controls">-->
-<!--                    <button type="submit" id="submit-btn">Sign In</button>-->
-<!--                </div>-->
-
-<!--                <input type="checkbox" name="terms" id="terms">-->
-<!--                <label for="terms">I agree to the <a href="#" class="termsLink">Terms of service</a> and <a href="#"-->
-<!--                                                                                                            class="termsLink">Privacy Policy</a>.</label>-->
-<!--                <p id="error-message" class="error"></p>-->
-<!--            </form>-->
-
-<!--            &lt;!&ndash; </form> &ndash;&gt;-->
-
-<!--        </div>-->
-
-
-<!--    </div>-->
-<!--</div>-->
-
-<!--========================================-->
-
-<!-- <script>
-  function submitForm() {
-    var steamId = document.getElementById("steam_id").value;
-    var apiKey = document.getElementById("steam_api_key").value;
-    var termsCheckbox = document.getElementById("terms");
-
-    var errorMessage = document.getElementById("error-message");
-    errorMessage.textContent = "";
-
-    if (steamId === "") {
-      errorMessage.textContent = "Please enter your Steam ID.";
-      return false;
-    }
-
-    if (apiKey === "") {
-      errorMessage.textContent = "Please enter your Steam API Key.";
-      return false;
-    }
-
-    if (!termsCheckbox.checked) {
-      errorMessage.textContent = "Please agree to the Terms of Service and Privacy Policy.";
-      return false;
-    }
-
-    // 유효성 검사 통과 시 main.html로 이동
-    window.location.href = "main.html";
-
-    return false; // 폼 제출을 막기 위해 false 반환
-  }
-</script> -->
+<!--<h2>Hello Spring Boot!!</h2>-->
+<!--<a href="/member/save">회원가입</a>-->
+<!--<a href="/member/login">로그인</a>-->
+<!--<a href="/member/">회원목록</a>-->
 <!--</body>-->
-
 <!--</html>-->
+
+
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Document</title>
+    <style>
+    .error {
+      color: red;
+    }
+  </style>
 </head>
+
 <body>
-<h2>Hello Spring Boot!!</h2>
-<a href="/member/save">회원가입</a>
-<a href="/member/login">로그인</a>
-<a href="/member/">회원목록</a>
+<div id="form-container">
+    <div id="form-inner-container">
+        <!-- Sign up form -->
+        <div id="sign-in-container">
+            <h3>Get Started</h3>
+            <form id="login-form" onsubmit="return submitForm()">
+                <div id="form-controls">
+                    <button type="submit" id="submit-btn">Start</button>
+
+                </div>
+
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms">I agree to the <a href="#" class="termsLink">Terms of service</a> and <a href="#"
+                                                                                                            class="termsLink">Privacy Policy</a>.</label>
+                <p id="error-message" class="error"></p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitForm() {
+      var termsCheckbox = document.getElementById("terms");
+
+      var errorMessage = document.getElementById("error-message");
+      errorMessage.textContent = "";
+
+      if (!termsCheckbox.checked) {
+        errorMessage.textContent = "Please agree to the Terms of Service and Privacy Policy.";
+        return false;
+      }
+
+      // 유효성 검사 통과 시 main.html로 이동
+      window.location.href = "/member/save";
+
+      return false; // 폼 제출을 막기 위해 false 반환
+    }
+  </script>
 </body>
+
 </html>
