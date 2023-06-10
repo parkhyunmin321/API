@@ -10,5 +10,6 @@ import com.codingrecipe.member.repository.MemberRepository;
 public class MemberService {
     private final MemberRepository memberRepository;
     public void save(MemberDTO memberDTO) {
+
     }
 }
